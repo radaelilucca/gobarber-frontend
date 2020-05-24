@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import { Container } from './styles';
+import { Container } from "./styles";
 
 function SignIn() {
   return <h1> LOGIN</h1>;
