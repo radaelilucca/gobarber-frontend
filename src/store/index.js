@@ -1,4 +1,4 @@
-import createSagaMiddleware from "redux-saga";
+import createSagaMiddleware, { createSagaMonitor } from "redux-saga";
 
 import createStore from "./createStore";
 
