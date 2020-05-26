@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container, Content, Profile } from "./styles";
 
+import Notifications from "../Notifications";
+
 import logo from "~/assets/logopurple.svg";
 
 function header() {
@@ -14,6 +16,7 @@ function header() {
         </nav>
 
         <aside>
+          <Notifications />
           <Profile>
             <div>
               <strong>Radaeli Dev</strong>
