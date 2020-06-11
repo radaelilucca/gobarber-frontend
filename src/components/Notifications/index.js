@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect, useMemo } from "react";
 import { parseISO, formatDistance } from "date-fns";
 import pt from "date-fns/locale/pt";
@@ -17,8 +18,8 @@ function Notifications() {
   const [visible, setVisible] = useState(false);
   const [notifications, setNotifications] = useState([]);
 
-  const hasUnhead = useMemo(
-    () => !!notifications.map((notification) => notification.read === false),
+  const hasUnread = useMemo(
+    () => !!notifications.find((notification) => notification.read === false),
     [notifications]
   );
 
@@ -55,7 +56,7 @@ function Notifications() {
 
   return (
     <Container>
-      <Badge hasUnread onClick={handleToggleVisible}>
+      <Badge hasUnread={hasUnread} onClick={handleToggleVisible}>
         <MdNotifications color="#7159c1" size={20} />
       </Badge>
       <NotificationList visible={visible}>
@@ -64,12 +65,14 @@ function Notifications() {
             <Notification key={notification._id} unread={!notification.read}>
               <p>{notification.content}</p>
               <time>{notification.timeDistance}</time>
-              <button
-                type="button"
-                onClick={() => handleMarkAsRead(notification._id)}
-              >
-                Marcar como lida
-              </button>
+              {!notification.read && (
+                <button
+                  type="button"
+                  onClick={() => handleMarkAsRead(notification._id)}
+                >
+                  Marcar como lida
+                </button>
+              )}
             </Notification>
           ))}
         </Scroll>

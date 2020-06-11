@@ -21,6 +21,12 @@ export const Content = styled.div`
     flex-direction: column;
     margin-top: 30px;
 
+    #teste {
+      background: #fff;
+      height: 200px;
+      width: 140px;
+    }
+
     input {
       background: rgba(0, 0, 0, 0.1);
       border: 0;
