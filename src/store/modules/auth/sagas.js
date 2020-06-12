@@ -20,6 +20,7 @@ export function* signIn({ payload }) {
       toast.error("USUARIO NAO É PRESTADOR");
       return;
     }
+    api.defaults.header.Authorization = `Bearer ${token}`;
 
     yield put(signInSucess(token, user));
 
