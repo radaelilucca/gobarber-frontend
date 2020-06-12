@@ -24,6 +24,7 @@ function AvatarInput() {
   }, [ref, registerField]);
 
   async function handleChange(e) {
+    // eslint-disable-next-line no-undef
     const data = new FormData();
 
     data.append("file", e.target.files[0]);
