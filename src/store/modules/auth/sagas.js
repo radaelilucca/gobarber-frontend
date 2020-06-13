@@ -1,7 +1,7 @@
 import { all, takeLatest, call, put } from "redux-saga/effects";
 import { toast } from "react-toastify";
 
-import { signInSucess, signFailure } from "./actions";
+import { signInSuccess, signFailure } from "./actions";
 import api from "~/services/api";
 import history from "~/services/history";
 
@@ -20,12 +20,13 @@ export function* signIn({ payload }) {
       toast.error("USUARIO NAO É PRESTADOR");
       return;
     }
-    api.defaults.header.Authorization = `Bearer ${token}`;
 
-    yield put(signInSucess(token, user));
+    api.defaults.headers.Authorization = `Bearer ${token}`;
+
+    yield put(signInSuccess(token, user));
 
     history.push("/dashboard");
-  } catch (err) {
+  } catch (error) {
     toast.error("Falha na autenticação, verifique seus dados.");
     yield put(signFailure());
   }

@@ -8,9 +8,9 @@ export function signInRequest(email, password) {
   };
 }
 
-export function signInSucess(token, user) {
+export function signInSuccess(token, user) {
   return {
-    type: "@auth/SIGN_IN_SUCESS",
+    type: "@auth/SIGN_IN_SUCCESS",
     payload: {
       token,
       user,
