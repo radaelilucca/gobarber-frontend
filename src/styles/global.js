@@ -32,6 +32,15 @@ export default createGlobalStyle`
     font: 14px 'Roboto', sans-serif;
   }
 
+  input {
+    transition: .3s;
+
+    &:hover, &:focus {
+        
+        transform: scale(1.05);
+      }
+  }
+
   a {
     text-decoration: none;
   }

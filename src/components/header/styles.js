@@ -17,6 +17,7 @@ export const Content = styled.div`
   nav {
     display: flex;
     align-items: center;
+
     img {
       margin-right: 20px;
       padding-right: 20px;
@@ -26,6 +27,12 @@ export const Content = styled.div`
     a {
       font-weight: bold;
       color: #7159c1;
+
+      transition: 0.1s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
     }
   }
 

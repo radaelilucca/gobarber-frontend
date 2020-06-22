@@ -9,6 +9,7 @@ export const Container = styled.div`
 
     &:hover {
       opacity: 0.7;
+      transform: scale(1.3);
     }
 
     img {
@@ -17,6 +18,11 @@ export const Container = styled.div`
       border-radius: 50%50%;
       border: 3px solid rgba(255, 255, 255, 0.3);
       background: #eee;
+      transition: 0.2s;
+
+      &:hover {
+        transform: scale(1.3);
+      }
     }
 
     input {
